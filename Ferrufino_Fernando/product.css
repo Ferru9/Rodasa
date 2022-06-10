@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
+
+
+/* Body styles (grid system)
+======================= */
+body {
+
+  line-height: 1.6;
+  /*--This fulfills requirement 3.2.2 H.I --*/
+  display: grid;
+  grid-template:
+    "hero hero hero hero"50vh ". main main ."auto "footer footer footer footer"auto / 1fr minmax(0em, 30fr) minmax(9em, 2fr) 0fr;
+  grid-column-gap: 1.5em;
+  grid-row-gap: 3em;
+}
+
+
+/* Aside and CTA's
+======================= */
+aside {
+  display: none;
+}
+
+
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (min-width: 70rem) {
+
+  body {
+
+    line-height: 1.6;
+    display: grid;
+    grid-template:
+      "hero hero hero hero"50vh ". main main ."auto ". sidebar sidebar ."auto "footer footer footer footer"auto / 1fr minmax(30em, 5fr) minmax(15em, 2fr) 1fr;
+    grid-column-gap: 1.5em;
+  }
+
+  aside {
+    display: block;
+  }
+
+}
+
+
+
+
+
+
+
+/* header Title
+======================= */
+
+
+.hero {
+  grid-area: hero;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/Assets/Header_image.jpg);
+  opacity: 3;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5em;
+  font-weight: 900;
+  margin-top: 1em;
+  color: white;
+  /*--This fulfills requirement 3.2.2 I --*/
+  text-shadow: 3px 3px black;
+
+  margin: 0;
+}
+
+.hero-subtitle {
+  color: white;
+
+  margin: 0;
+}
+
+
+/* grid areas
+======================= */
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: sidebar;
+  background: #e8e8e8;
+  padding: 2em;
+}
+
+header {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* Cards
+======================= */
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (min-width: 60rem) {
+
+  .card {
+    text-align: left;
+    display: grid;
+    grid-template:
+      "img title"min-content "img content"auto / 1fr 3fr;
+    grid-column-gap: 1.5em;
+    /*--This fulfills requirement 3.2.2 I --*/
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+}
+
+
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (max-width: 59rem) {
+  .card {
+    text-align: center;
+    display: grid;
+    grid-template:
+      "img img"min-content "title title"
+      "content content"auto / 1fr 3fr;
+
+    grid-column-gap: 1.5em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    justify-items: center;
+  }
+}
+
+
+
+.card-img {
+  grid-area: img;
+  max-width: 100%;
+}
+
+.card-title {
+  grid-area: title;
+  margin: 0;
+  font-weight: 300;
+}
+
+.card-content {
+  grid-area: content;
+
+}
