@@ -108,7 +108,7 @@ section {
 /* light background sections
 ======================= */
 .bg-light {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/Assets/Header_image.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Assets/header.jpg);
   opacity: 3;
   background-size: cover;
   background-position: center;
