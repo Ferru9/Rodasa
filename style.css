@@ -490,7 +490,7 @@ p:last-of-type {
      }
 
      .home-about {
-          background-image: url(/Assets/Who_we_are.jpg);
+          background-image: url(Assets/Who_we_are.jpg);
           /*--This fulfills requirement 3.2.2 F.II --*/
           background-origin: border-box;
           background-repeat: no-repeat;
