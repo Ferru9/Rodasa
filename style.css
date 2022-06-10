@@ -417,7 +417,7 @@ p:last-of-type {
 .home-header {
 
      /*--This fulfills requirement 3.2.2 A.IV --*/
-     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Assets/Header_image.jpg);
+     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Assets/header.jpg);
      opacity: 3;
      /*--This fulfills requirement 3.2.2 F.I --*/
      background-size: cover;
