@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+  <div class="elfsight-app-f70af90a-3cc6-44dd-aa32-7ef0509825b0"></div>
+
+
+  <!-- This fulfills requirement 3.2.1 C-->
+  <header class="primary-header flex">
+
+    <div class="logo-position">
+      <img src="/Assets/logo1.png" alt="logo" class="logo">
+    </div>
+
+
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span
+        class="sr-only">Menu</span> </button>
+
+    <nav>
+      <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
+        <li class="active"> <a href="index.html">
+            <span aria-hidden="true">00</span> Home
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html">
+            <span aria-hidden="true">02</span> About
+            <!--aria-hidden is for web readers like JAWS-->
+          </a>
+        </li>
+        <li>
+          <a href="product.html">
+            <span aria-hidden="true">03</span> Products
+          </a>
+        </li>
+        <li>
+          <a href="service.html">
+            <span aria-hidden="true">04</span> Services
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <span aria-hidden="true">05</span> Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div class="hero">
+    <h1 class="hero-title">Products</h1>
+    <p class="hero-subtitle"></p>
+  </div>
+
+  <main>
+
+    <div class="card" id="bearings">
+      <img src="/Assets/bearings.jpeg" alt="" class="card-img">
+      <h2 class="card-title">Bearings</h2>
+      <div class="card-content">
+        <p>We have different types of bearings for various sizes, you can ask for specifications if needed.</p>
+        <a href="https://web.whatsapp.com/send?phone=50378703596"
+          class="button button-dark-products button-small">Buy</a>
+      </div>
+    </div>
+
+    <div class="card" id="industrial-sleeves">
+      <img src="/Assets/mamfile-1605043-720Wx540H-c.png" alt="" class="card-img">
+      <h2 class="card-title">Industrial sleeves</h2>
+      <div class="card-content">
+        <p>We have different types of sleeves for various sizes and characteristics, you can ask for specifications if
+          needed.</p>
+        <a href="" class="button button-dark-products button-small">Buy</a>
+      </div>
+    </div>
+    <div class="card" id="rowlocks">
+      <img src="/Assets/0901d196808551bc-Collection-of-ball-bearing-units_tcm_12-463715.jpeg" alt="" class="card-img">
+      <h2 class="card-title">Rowlocks</h2>
+      <div class="card-content">
+        <p>We have different types of rowlocks, you can ask for the list or order a specialized one if you need it.</p>
+        <a href="" class="button button-dark-products button-small">Buy</a>
+      </div>
+    </div>
+    <div class="card" id="industrial-hoses">
+      <img src="/Assets/Swagelok_HosesAndFlexibleTubing-main_i.jpeg" alt="" class="card-img">
+      <h2 class="card-title">Industrial hoses</h2>
+      <div class="card-content">
+        <p>We have various types of hoses, from different materials and lengths.</p>
+        <a href="" class="button button-dark-products button-small">Buy</a>
+      </div>
+    </div>
+    <div class="card" id="couplings">
+      <img src="/Assets/machinedesign_com_sites_machinedesign.com_files_uploads_2013_04_SKF_DG_Couplings.webp" alt=""
+        class="card-img">
+      <h2 class="card-title">Couplings</h2>
+      <div class="card-content">
+        <p>We have many types of couplings from the brand SKF, we offer all the types of couplings available by SKF.
+        </p>
+        <a href="" class="button button-dark-products button-small">Buy</a>
+      </div>
+    </div>
+    <div class="card" id="retainer-rings">
+      <img src="/Assets/51deWHfQXzL._AC_SL1500_.jpeg" alt="" class="card-img">
+      <h2 class="card-title">Retainer rings</h2>
+      <div class="card-content">
+        <p>We have retainer rings for different sizes and fits. </p>
+        <a href="" class="button button-dark-products button-small">Buy</a>
+      </div>
+    </div>
+    <div class="card" id="lubricants">
+      <img src="/Assets/Automatisch-smeerpatroon-SKF.webp" alt="" class="card-img">
+      <h2 class="card-title">Lubricants</h2>
+      <div class="card-content">
+        <p>All types of industrial lubricants, from the brand SKF.</p>
+        <a href="" class="button button-dark-products button-small">Buy</a>
+      </div>
+    </div>
+    <div class="card" id="industrial-machinery">
+      <img src="/Assets/0901d196801544a3-PUL0081V_NG-FT36-1x1_tcm_12-33765.jpeg" alt="" class="card-img">
+      <h2 class="card-title">Industrial machinery</h2>
+      <div class="card-content">
+        <p>We offer different types of industrial machinery, from kits to install bearings, to maintenance machines.</p>
+        <a href="" class="button button-dark-products button-small">Buy</a>
+      </div>
+    </div>
+  </main>
+
+  <aside>
+    <h1> Season prices end on: <div id="countdown"></div>  </h1>
+    <p> contact us to know the special deals we have </p>
+    <br>
+    <a href="https://web.whatsapp.com/send?phone=50378703596" class="button button-dark">Talk to us!</a>
+
+    <!-- This fulfills requirement 3.2.6 B-->
+    
+  </aside>
+
+
+  <!-- This fulfills requirement 3.2.1 A-->
+  <footer id="footer">
+    <!-- This fulfills requirement 3.2.1 F-->
+    <div class="container">
+
+      <div class="col-3">
+
+
+        <p class="locations"><strong>San Salvador</strong></p>
+        <p> <strong>Address:</strong> 35 ave. Sur. No. 936 Col. Dreyfus San Salvador</p>
+        <p> <strong>Telephone:</strong> (503)2219-5050.</p>
+
+        <p class="locations"><strong>Sonsonate</strong></p>
+        <p> <strong>Address:</strong> Boulevard Las Palmeras, carretera a San Salvador km 64 1/2 contiguo a
+          gasolinera UNO</p>
+        <p> <strong>Telephone:</strong> (503)2410-5000.</p>
+        <br>
+
+        &copy; 2021 Rodasa
+        <div id="modified"></div>
+      </div>
+
+
+      <div class="col-1">
+        <ul class="unstyled-list">
+          <li> <strong>Products</strong> </li>
+          <li><a href="product.html#bearings">Bearings</a></li>
+          <li><a href="product.html#industrial-sleeves">Industrial sleeves</a></li>
+          <li><a href="product.html#rowlocks">Rowlocks</a></li>
+          <li><a href="product.html#industrial-hoses">Industrial hoses</a></li>
+          <li><a href="product.html#couplings">Couplings</a></li>
+          <li><a href="product.html#retainer-rings">Retainer rings</a></li>
+          <li><a href="product.html#lubricants">Lubricants</a></li>
+          <li><a href="product.html#industrial-machinery">Industrial machinery</a></li>
+        </ul>
+
+      </div>
+
+
+      <div class="col-1">
+        <ul class="unstyled-list">
+          <li> <strong>Services</strong> </li>
+          <li><a href="service.html#direct-importation">Direct importation</a></li>
+          <li><a href="service.html#delivery-services">Delivery services</a></li>
+          <li><a href="service.html#distribution-of-components">Distribution of components</a></li>
+          <li><a href="service.html#training-and-advice">Training and advice</a></li>
+        </ul>
+      </div>
+
+      <div class="col-1">
+        <ul class="unstyled-list media">
+          <li> <strong>Socials</strong> </li>
+          <li><a href="https://www.facebook.com/rodasa.S.A.deC.V"><i class="fab fa-facebook"></i></a></i>
+          </li>
+          <li><a href="https://www.instagram.com/rodasa_sv/"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://web.whatsapp.com/send?phone=50378703596"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+
+
+</html>

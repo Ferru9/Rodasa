@@ -1,0 +1,654 @@
+@charset "utf-8";
+
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
+
+
+* {
+     box-sizing: border-box;
+     /* padding is easier */
+     transition: all ease-in-out 250ms;
+}
+
+body {
+     margin: 0;
+     /*--This fulfills requirement 3.2.2 D --*/
+     font-family: 'Raleway', sans-serif;
+     text-align: center;
+}
+
+img {
+     max-width: 100%;
+     height: auto;
+}
+
+.container {
+     width: 95%;
+     margin: 0 auto;
+     max-width: 70em;
+}
+
+.clearfix::after,
+section::after,
+footer::after {
+     content: '';
+     display: block;
+     clear: both;
+
+}
+
+
+/* header 
+======================= */
+
+/*--This fulfills requirement 3.2.2 A.III --*/
+
+header {
+
+     position: absolute;
+     left: 0;
+     right: 0;
+     margin: 1em;
+}
+
+/*------ navigation style -------*/
+
+.flex {
+     display: flex;
+     gap: var(--gap, 1rem);
+}
+
+.logo {
+
+     margin: 1rem;
+     width: 30%;
+
+
+
+
+}
+
+.logo-position {
+     text-align: left;
+}
+
+.primary-header {
+     align-items: center;
+     justify-content: space-between;
+}
+
+.primary-navigation {
+
+     padding: 0;
+     margin: 0;
+}
+
+/*primary header*/
+.flex {
+     display: flex;
+     gap: var(--gap, 1rem);
+}
+
+.primary-navigation a {
+     color: white;
+}
+
+
+.mobile-nav-toggle {
+     display: none;
+}
+
+.primary-navigation {
+     list-style: none;
+
+     /*--This fulfills requirement 3.2.2 C --*/
+     background: hsl(0 0% 0% / 0.75);
+
+}
+
+
+/*for visually impaired*/
+
+.sr-only {
+     position: absolute;
+     left: -10000px;
+     width: 1px;
+     height: 1px;
+     top: auto;
+     overflow: hidden;
+}
+
+/*like a media query if a browser support this use the following*/
+
+@supports (backdrop-filter: blur(1rem)) {
+     .primary-navigation {
+
+          /*--This fulfills requirement 3.2.2 C --*/
+          background: hsl(0 0% 100% / 0.1);
+          backdrop-filter: blur(1rem);
+          /* backdrop-filter does not work in firefox*/
+     }
+}
+
+.primary-navigation a {
+     text-decoration: none;
+}
+
+.primary-navigation a>span {
+     font-weight: 700;
+     margin-inline-end: 0.75em;
+}
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (max-width: 45em) {
+
+     .primary-navigation {
+          --gap: 3em;
+          position: fixed;
+          z-index: 1000;
+          inset: 0 0 0 30%;
+
+          flex-direction: column;
+          /* min function, at some point if the screen increases it will be a max of 10 rem*/
+
+          transform: translateX(100%);
+          /*--This fulfills requirement 3.2.5 B.II --*/
+          transition: transform 350ms ease-out;
+     }
+
+     #primary-navigation {
+          padding: min(30vh, 10rem) 2em;
+     }
+
+     .primary-navigation[data-visible="true"] {
+          transform: translateX(0%);
+     }
+
+
+     .mobile-nav-toggle {
+          /*--This fulfills requirement 3.2.7 B --*/
+
+          display: block;
+          position: absolute;
+          z-index: 9999;
+          background-color: transparent;
+          background: url('Assets/icon-hamburger.svg');
+          background-repeat: no-repeat;
+          border: 0;
+          width: 2rem;
+          aspect-ratio: 1/1;
+          top: 2rem;
+          right: 2rem;
+     }
+
+     .mobile-nav-toggle[aria-expanded="true"] {
+          background-image: url('Assets/icon-close.svg');
+     }
+
+}
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (min-width: 35em) and (max-width: 55em) {
+     .primary-navigation a>span {
+          display: none;
+     }
+}
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (min-width: 35em) {
+     #primary-navigation {
+          --gap: clamp(1.5rem, 5vw, 3rem);
+          padding-block: 2rem;
+          padding-inline: clamp(3rem, 8vw, 10rem);
+          /*it will never get smaller than 3 or bigger than 10 */
+     }
+
+     .primary-navigation>li>a:hover {
+          border-bottom: 1px solid white;
+
+
+     }
+
+}
+
+
+
+
+/* Column system for Footer
+======================= */
+
+[class^=col-] {
+     width: 100%;
+     margin-top: 1em;
+}
+
+[class^=col-]:first-of-type {
+     margin-top: 0;
+}
+
+.col-1 {
+     width: 33.333334%;
+     float: left;
+}
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (min-width: 40rem) {
+
+     [class^=col-] {
+          float: left;
+          padding: 0 .5em;
+          margin-top: 0;
+     }
+
+     /*--This fulfills requirement 3.2.2 E.VI --*/
+     [class^=col-]:first-of-type {
+          padding-left: 0;
+     }
+
+     /*--This fulfills requirement 3.2.2 E.VI --*/
+     [class^=col-]:last-of-type {
+          padding-right: 0;
+     }
+
+     .col-3 {
+          width: 50%;
+     }
+
+     .col-1 {
+          width: 16.6666%;
+
+     }
+
+}
+
+.col-3 p {
+     font-size: 0.8em;
+     margin-top: -0.5em;
+}
+
+.col-3 .locations {
+     text-decoration: underline;
+}
+
+.media i {
+     font-size: 2em;
+
+     line-height: 1.7em;
+
+
+}
+
+
+/* typography
+======================= */
+
+h1 {
+     font-weight: 300;
+     font-size: 1.8rem;
+     margin-top: 0;
+}
+
+/*--This fulfills requirement 3.2.2 A.I --*/
+p {
+     margin-top: 0;
+     line-height: 1.5;
+}
+
+p:last-of-type {
+     margin-bottom: 0;
+}
+
+.title {
+     font-size: 2.5rem;
+     margin-bottom: 1.5em;
+     font-weight: 900;
+     margin-top: 1em;
+
+}
+
+.title-shadow {
+     text-shadow: 2px 2px black;
+
+}
+
+.title span {
+     font-weight: 300;
+     display: block;
+     font-size: .9em;
+}
+
+.title-cta {
+     margin: 0 0 .5em;
+}
+
+.unstyled-list {
+     margin: 0;
+     padding: 0;
+     list-style-type: none;
+
+}
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (min-width: 60rem) {
+
+     p {
+          font-size: 1.2rem;
+          line-height: 1.6;
+     }
+
+     .title {
+          font-size: 3.7rem;
+     }
+
+}
+
+/* buttons styles
+======================= */
+
+.button {
+     display: inline-block;
+     font-size: 1.15rem;
+     text-decoration: none;
+     text-transform: uppercase;
+     /*--This fulfills requirement 3.2.2 F.V --*/
+     border-width: 2px;
+     border-style: solid;
+     padding: .5em 1.75em;
+}
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (min-width: 60rem) {
+     .button {
+          font-size: 1.5rem;
+     }
+}
+
+.button-small {
+     font-size: .7rem;
+     font-weight: 700;
+}
+
+.button-accent {
+     /*--This fulfills requirement 3.2.2 C --*/
+     color: rgba(141, 198, 63, 255);
+     /*--This fulfills requirement 3.2.2 C --*/
+     border-color: rgba(141, 198, 63, 255);
+}
+
+/*--This fulfills requirement 3.2.2 B.I --*/
+.button-accent:hover,
+.button-accent:focus {
+     /*--This fulfills requirement 3.2.2 C --*/
+     background: rgba(141, 198, 63, 255);
+     color: #232323;
+}
+
+.button-dark {
+     color: #232323;
+
+     border-color: #232323;
+}
+
+/*--This fulfills requirement 3.2.2 B.I --*/
+.button-dark:hover,
+.button-dark:focus {
+     background: #232323;
+     color: rgba(141, 198, 63, 255);
+}
+
+.button-dark-products {
+     color: #232323;
+     border-color: #232323;
+}
+
+.button-dark-products:hover,
+.button-dark-products:focus {
+     background: #232323;
+     color: white;
+}
+
+
+/* Header section
+======================= */
+
+
+/*--This fulfills requirement 3.2.2 A.III --*/
+
+.home-header {
+
+     /*--This fulfills requirement 3.2.2 A.IV --*/
+     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/Assets/Header_image.jpg);
+     opacity: 3;
+     /*--This fulfills requirement 3.2.2 F.I --*/
+     background-size: cover;
+     /*--This fulfills requirement 3.2.2 F.II --*/
+     background-clip: border-box;
+     background-position: center;
+     padding: 10em 0;
+     color: #FFF;
+
+}
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (min-width: 60rem) {
+     .home-header {
+          height: 100vh;
+          padding-top: 35vh;
+     }
+
+}
+
+/* Home who we are
+======================= */
+
+.home-about-textbox {
+     background-color: #232323;
+     padding: 4em;
+     width: 100vw;
+     margin-left: -2.6%;
+     outline: 2px solid rgba(141, 198, 63, 255);
+     outline-offset: -2.5em;
+     color: #FFF;
+     /*--This fulfills requirement 3.2.2 H.IV --*/
+     position: relative;
+}
+
+.home-about-textbox h1 {
+     color: rgba(141, 198, 63, 255);
+     /*--This fulfills requirement 3.2.2 H.IV --*/
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     top: .75em;
+     background: #232323;
+     padding: 0 .145em;
+
+}
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (min-width: 25rem) {
+
+     h1 {
+          font-size: 2rem;
+     }
+
+     .home-about-textbox h1 {
+          top: .6em;
+          padding: 0 .325em;
+     }
+
+}
+
+/* Desktop style for who we are
+======================= */
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (min-width: 60rem) {
+
+     h1 {
+          font-size: 2.5rem;
+     }
+
+     .home-about {
+          background-image: url(/Assets/Who_we_are.jpg);
+          /*--This fulfills requirement 3.2.2 F.II --*/
+          background-origin: border-box;
+          background-repeat: no-repeat;
+
+          padding-bottom: 10em;
+     }
+
+     .home-about-textbox {
+          width: 52%;
+          padding: 7em;
+          outline-offset: -3.75em;
+          margin-left: 49.4%;
+          top: -5em;
+          text-align: left;
+          box-shadow: 0 0 3em 0 rgb(0 0 0 / 30%);
+     }
+
+     .home-about-textbox h1 {
+          top: .75em;
+          left: 6rem;
+          transform: translateX(0);
+     }
+
+}
+
+/* drop-cap
+======================= */
+
+/*--This fulfills requirement 3.2.2 G --*/
+.firstcharacter {
+     color: #903;
+     float: left;
+     font-family: Georgia;
+     font-size: 75px;
+     line-height: 60px;
+     padding-top: 4px;
+     padding-right: 8px;
+     padding-left: 3px;
+}
+
+/* product styles
+======================= */
+
+.product h1 {
+     font-weight: 800;
+}
+
+.product {
+     margin: 3em 0 0;
+}
+
+
+.product-item {
+     margin: 0;
+     position: relative;
+}
+
+.product-item img {
+     display: block;
+     width: 100%;
+     height: auto;
+     max-width: 100%;
+}
+
+.port-desc {
+     position: absolute;
+     z-index: 100;
+     bottom: 0em;
+     left: 0em;
+     right: 0em;
+     color: white;
+     background: rgba(0, 0, 0, .6);
+     padding-bottom: 2em;
+}
+
+.port-desc p {
+     margin: 1em;
+}
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (min-width: 37rem) {
+
+     .product-item {
+          width: 50%;
+          /*--This fulfills requirement 3.2.2 H.III --*/
+          float: left;
+     }
+
+}
+
+/*--This fulfills requirement 3.2.7 A --*/
+@media (min-width: 60rem) {
+
+
+     .product-item {
+          width: 33.3333334%;
+          overflow: hidden;
+     }
+
+     .port-desc {
+          transform: translateY(150%);
+     }
+
+     .product-item:hover .port-desc {
+          transform: translateY(0%);
+     }
+
+}
+
+
+/* CTA
+======================= */
+
+.cta {
+     background-color: rgba(141, 198, 63, 255);
+     padding: 5em 0;
+}
+
+
+/* Footer
+======================= */
+
+footer {
+     background: #232323;
+     color: #fff;
+     text-align: left;
+     padding: 5em 0;
+     line-height: 1.3em;
+}
+
+
+/* List styles
+======================= */
+
+/*--This fulfills requirement 3.2.2 A.II --*/
+
+.unstyled-list a,
+/*--This fulfills requirement 3.2.2 E.I --*/
+.unstyled-list a:link {
+     text-decoration: none;
+     color: #DDD;
+}
+
+/*--This fulfills requirement 3.2.2 E.II --*/
+.unstyled-list a:visited {
+     color: hsla(240, 19%, 81%, 0.6);
+}
+
+
+
+/*--This fulfills requirement 3.2.2 E.III --*/
+/*--This fulfills requirement 3.2.2 E.VI --*/
+/*--This fulfills requirement 3.2.2 E.V --*/
+.unstyled-list a:hover,
+.unstyled-list a:focus,
+.unstyled-list a:active {
+     text-decoration: underline;
+}
+
+
+
